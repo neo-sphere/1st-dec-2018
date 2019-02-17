@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.http import HttpResponse
 # main urls 
 urlpatterns = [
-    path('',lambda request: HttpResponse('Welcome to Home PAge')),
+    path('',lambda request: HttpResponse('Welcome to Home PAge'), name='home'),
     path('user/', include('apps.user_profile.urls')),
     path('account/', include('apps.account.urls')),
     path('epocket/', include('apps.epocket.urls')),

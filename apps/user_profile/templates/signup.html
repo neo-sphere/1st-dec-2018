@@ -1,0 +1,11 @@
+<h1>Signup Page</h1>
+<h3>
+    {{ name }} and age : {{ age }}
+</h3>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="Signup">
+</form>
+
