@@ -1,0 +1,14 @@
+<h1>
+    Home page !
+</h1>
+<h3>
+    {{ request.user.username | capfirst }}
+</h3>
+
+<h2>
+    {% if request.user.first_name %}
+        {{ request.user.first_name }}
+        {{ request.user.last_name }}
+        {{ request.user.email }}
+    {% endif %}
+</h2>

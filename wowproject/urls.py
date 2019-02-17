@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 from django.http import HttpResponse
+from apps.epocket.views import home
 # main urls 
 urlpatterns = [
-    path('',lambda request: HttpResponse('Welcome to Home PAge'), name='home'),
+    path('', home, name='home'),
     path('user/', include('apps.user_profile.urls')),
     path('account/', include('apps.account.urls')),
     path('epocket/', include('apps.epocket.urls')),
