@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from apps.epocket.views import home
-
+from django.http import HttpResponse
+# main urls 
 urlpatterns = [
-    path('', home),
+    path('',lambda request: HttpResponse('Welcome to Home PAge')),
+    path('user/', include('apps.user_profile.urls')),
+    path('account/', include('apps.account.urls')),
+    path('epocket/', include('apps.epocket.urls')),
     path('admin/', admin.site.urls),
 ]
