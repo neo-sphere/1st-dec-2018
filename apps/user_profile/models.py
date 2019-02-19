@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -17,7 +19,7 @@ class Profile(models.Model):
         (MALE, 'Male'),
         (FEMALE, 'Female'),
     )
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     contact_no = models.CharField(max_length=15, unique=True,
                                 verbose_name='Mobile No',
                                 help_text='98XXXXXXXX',
@@ -30,6 +32,7 @@ class Profile(models.Model):
     occupation = models.CharField(max_length=20)
 
     def __str__(self):
-        return 'Contact No: {} , Date of Birth: {}'.format(self.contact_no,
-                                                        self.dob)
+        return self.user.username.upper()
+        # return 'Contact No: {} , Date of Birth: {}'.format(self.contact_no,
+                                                        # self.dob)
 

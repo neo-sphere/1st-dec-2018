@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # custom apps
     'apps.user_profile',
     'apps.epocket',
+    'apps.account',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kathmandu' # +5:45
 
 USE_I18N = True
 
