@@ -25,11 +25,11 @@ class Profile(models.Model):
                                 help_text='98XXXXXXXX',
                                 validators=[validate_mobile_no_is_numeric,])
 
-    address = models.CharField(max_length=50)
-    nationality = models.CharField(max_length=20)
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICE)
-    dob = models.DateField()
-    occupation = models.CharField(max_length=20)
+    address = models.CharField(max_length=50, null=True, blank=True)
+    nationality = models.CharField(max_length=20, null=True, blank=True)
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICE, default=MALE)
+    dob = models.DateField(null=True, blank=True)
+    occupation = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):
         return self.user.username.upper()

@@ -21,7 +21,7 @@ from apps.epocket.views import home
 # main urls 
 urlpatterns = [
     path('', home, name='home'),
-    path('user/', include('apps.user_profile.urls')),
+    path('', include('apps.user_profile.urls')),
     path('account/', include('apps.account.urls')),
     path('epocket/', include('apps.epocket.urls')),
     path('admin/', admin.site.urls),

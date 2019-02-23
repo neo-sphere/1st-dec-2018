@@ -1,14 +1,15 @@
 <h1>
-    Home page !
+    Home page New
 </h1>
-<h3>
-    {{ request.user.username | capfirst }}
-</h3>
-
 <h2>
-    {% if request.user.first_name %}
-        {{ request.user.first_name }}
-        {{ request.user.last_name }}
-        {{ request.user.email }}
+    {% if request.user.is_authenticated %}
+        First name : {{ request.user.first_name }}<br>
+        Email: {{ request.user.email }}<br>
+       Contact no : {{ request.user.profile.contact_no }}<br>
+       Balance: {{ request.user.account.balance }}<br>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'signup' %}">Signup</a>
+    <a href="{% url 'login' %}">Login</a>
     {% endif %}
 </h2>
