@@ -18,11 +18,16 @@ from django.urls import path, include
 
 from django.http import HttpResponse
 from apps.epocket.views import home
+
+admin.site.site_header = "e-pocket Admin"
+admin.site.site_title = "e-pocket Admin Portal"
+admin.site.index_title = "Welcome to  E - Pocekt Admin Portal"
+
 # main urls 
 urlpatterns = [
     path('', home, name='home'),
     path('', include('apps.user_profile.urls')),
-    path('account/', include('apps.account.urls')),
-    path('epocket/', include('apps.epocket.urls')),
+    path('', include('apps.account.urls')),
+    path('', include('apps.epocket.urls')),
     path('admin/', admin.site.urls),
 ]

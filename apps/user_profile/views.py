@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
 
 from django.conf import settings
 

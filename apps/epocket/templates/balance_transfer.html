@@ -1,0 +1,10 @@
+<h1>Balance Transfer</h1>
+{% if user.is_authenticated %}
+    {{ user.username }}
+{% endif %}
+
+<form method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Transfer">
+</form>
