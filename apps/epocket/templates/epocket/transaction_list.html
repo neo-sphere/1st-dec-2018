@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Transaction List View</h2>
+{{ user.username }}
+
+<table>
+        <tr>
+          <th>To User</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+        {% for transaction in transaction_list %}
+        <tr>
+          <td>{{ transaction.to_user }}</td>
+          <td>{{ transaction.balance }}</td>
+          <td>{{ transaction.created }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+      
