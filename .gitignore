@@ -4,6 +4,8 @@ db.sqlite3
 *.pid
 media/
 static/
+old_media/
+file_uploads/
 __ pycache __
 .DS_Store
 **/migrations/**

@@ -47,4 +47,5 @@ class SignUpView(CreateView):
         user = form.save()
         Profile.objects.create(user=user, contact_no=mobile)
         Account.objects.create(user=user, balance=balance)
+        
         return super().form_valid(form)
