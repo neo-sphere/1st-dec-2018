@@ -16,14 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from django.http import HttpResponse
+from django.conf.urls.static import static
+from django.conf import settings
+
 from apps.epocket.views import home
 
 admin.site.site_header = "e-pocket Admin"
 admin.site.site_title = "e-pocket Admin Portal"
 admin.site.index_title = "Welcome to  E - Pocekt Admin Portal"
 
-# main urls 
+# project urls 
 urlpatterns = [
     path('', home, name='home'),
     path('', include('apps.user_profile.urls')),
@@ -31,3 +33,6 @@ urlpatterns = [
     path('', include('apps.epocket.urls')),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
